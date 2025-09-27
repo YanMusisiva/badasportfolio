@@ -10,8 +10,6 @@ import {
   Phone,
   Mail,
   Linkedin,
-  Menu,
-  X,
 } from "lucide-react";
 
 const Portfolio = () => {
