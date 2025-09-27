@@ -10,11 +10,14 @@ import {
   Phone,
   Mail,
   Linkedin,
+  Menu,
+  X,
 } from "lucide-react";
 
 const Portfolio = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -268,6 +271,8 @@ const Portfolio = () => {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="font-bold text-xl text-black">EH</div>
+
+            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8 text-black">
               <a
                 href="#projects"
@@ -288,8 +293,45 @@ const Portfolio = () => {
                 Contact
               </a>
             </div>
+
+            {/* Mobile Hamburger */}
+            <button
+              className="md:hidden text-black focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </div>
+
+        {/* Mobile Dropdown */}
+        {isOpen && (
+          <div className="md:hidden bg-white shadow-lg">
+            <div className="flex flex-col space-y-4 px-6 py-4 text-black">
+              <a
+                href="#projects"
+                className="hover:text-blue-600 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Projects
+              </a>
+              <a
+                href="#photography"
+                className="hover:text-blue-600 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Photography
+              </a>
+              <a
+                href="#contact"
+                className="hover:text-blue-600 transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Projects Section */}
