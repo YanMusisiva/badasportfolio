@@ -10,11 +10,11 @@ import {
   Phone,
   Mail,
   Linkedin,
-  ExternalLink,
+  Menu,
+  X,
 } from "lucide-react";
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState("hero");
   const [isLoaded, setIsLoaded] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -269,8 +269,8 @@ const Portfolio = () => {
       <nav className="sticky top-0 bg-white shadow-md z-40">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="font-bold text-xl">EH</div>
-            <div className="hidden md:flex space-x-8">
+            <div className="font-bold text-xl text-black">EH</div>
+            <div className="hidden md:flex space-x-8 text-black">
               <a
                 href="#projects"
                 className="hover:text-blue-600 transition-colors"
@@ -354,7 +354,7 @@ const Portfolio = () => {
 
           <div className="text-center mt-12">
             <p className="text-gray-600 mb-4">
-              Photos exhibited at Uganda Society of Architects' AGM 2022
+              Photos exhibited at Uganda Society of Architects &apos; AGM 2022
             </p>
             <p className="text-sm text-gray-500">Exhibitor: Cristine Matua</p>
           </div>
@@ -408,11 +408,11 @@ const Portfolio = () => {
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-4">Let's Work Together</h2>
+          <h2 className="text-4xl font-bold mb-4">Let&apos;s Work Together</h2>
           <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
           <p className="text-gray-300 mb-12 text-lg">
-            Ready to bring your architectural vision to life? Let's discuss your
-            next project.
+            Ready to bring your architectural vision to life? Let&apos;s discuss
+            your next project.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
